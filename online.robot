@@ -1,7 +1,7 @@
 *Settings*
 Documentation   Suite de testes para verificar se o app está online
 
-Library   Browser
+Resource        base.robot
 
 Test Setup      Start Session
 Test Teardown   End Session
@@ -14,11 +14,3 @@ Deve exibir mensagem de boas vindas
   Wait For Elements State    
   ...           css=.navbar-item >> text=Que a Força (qualidade) esteja com você!  
   ...           visible     5  
-
-*Keywords*
-Start Session
-    New Browser   chromium      headless=False       slowMo=00:00:01
-    New Page      http://yodapp.vercel.app
-
-End Session
-    Take Screenshot
