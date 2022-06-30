@@ -11,7 +11,6 @@ Deve cadastrar um novo personagem
 
   Click         text=Novo
 
-  #Checkpoint (para saber se fomos de fato para a página de cadastro)
   Wait For Elements State   css=.card-header-title >> text=Cadastrar novo usuário
   ...                       visible     5
 
@@ -28,6 +27,13 @@ Deve cadastrar um novo personagem
   Click               xpath=//input[@name="comunications"]/../span[@class="check"]
 
   Click               css=button >> text=Cadastrar
+
+  # Sleep             1
+  # ${html}           Get Page Source
+  # Log               ${html}
+
+  Wait For Elements State   css=.toast div >> text=Usuário Cadastrado com sucesso!
+  ...                       visible     5
 
 *Keywords*
 Select Birth Date
