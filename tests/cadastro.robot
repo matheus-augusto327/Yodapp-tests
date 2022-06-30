@@ -1,7 +1,7 @@
 *Settings*
 Documentation   Suite de testes do cadastro de personagens
 
-Resource        base.robot
+Resource        ${EXECDIR}/resources/base.robot
 
 Test Setup      Start Session
 Test Teardown   End Session
