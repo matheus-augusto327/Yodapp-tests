@@ -35,6 +35,34 @@ Deve cadastrar um novo personagem
   Wait For Elements State   css=.toast div >> text=Usuário Cadastrado com sucesso!
   ...                       visible     5
 
+
+Email Incorreto
+
+  Click         text=Novo
+
+  Wait For Elements State   css=.card-header-title >> text=Cadastrar novo usuário
+  ...                       visible     5
+
+  Fill Text           css=input[placeholder^="Nome"]  Darth Vader
+  Fill Text           css=input[placeholder="Email"]  vader&hotmail.com
+
+  Select Options By   css=.ordem select  value  2
+
+  Select Birth Date   janeiro  1980  12
+
+  Fill Text           id=insta   @vader
+
+  Click               xpath=//input[@name="comunications"]/../span[@class="check"]
+
+  Click               css=button >> text=Cadastrar
+
+  # Sleep             1
+  # ${html}           Get Page Source
+  # Log               ${html}
+
+  Wait For Elements State   css=.toast div >> text=Oops! O email é incorreto.
+  ...                       visible     5
+
 *Keywords*
 Select Birth Date
   [Arguments]         ${month}  ${year}  ${day}
