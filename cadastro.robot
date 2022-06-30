@@ -13,7 +13,7 @@ Deve cadastrar um novo personagem
 
   #Checkpoint (para saber se fomos de fato para a página de cadastro)
   Wait For Elements State   css=.card-header-title >> text=Cadastrar novo usuário
-  ...                 visible     5
+  ...                       visible     5
 
   Fill Text           css=input[placeholder^="Nome"]  Mestre Yoda
   Fill Text           css=input[placeholder="Email"]  yoda@jedi.com
@@ -26,6 +26,8 @@ Deve cadastrar um novo personagem
   Fill Text           id=insta   @yoda
 
   Click               xpath=//input[@name="comunications"]/../span[@class="check"]
+
+  Click               css=button >> text=Cadastrar
 
 *Keywords*
 Select Birth Date
