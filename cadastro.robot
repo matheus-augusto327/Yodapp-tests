@@ -8,6 +8,7 @@ Test Teardown   End Session
 
 *Test Cases*
 Deve cadastrar um novo personagem
+  [Tags]        happy
 
   Click         text=Novo
 
@@ -37,6 +38,7 @@ Deve cadastrar um novo personagem
 
 
 Email Incorreto
+  [Tags]        inv_email
 
   Click         text=Novo
 
