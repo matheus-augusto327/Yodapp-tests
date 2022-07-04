@@ -36,12 +36,12 @@ Check Accept Communications
 Select Birth Date
   [Arguments]         ${text_date}
 
-  @{date}             Split String      ${text_date}  -
+  @{date}             Split String       ${text_date}  -
 
   Click               css=input[name="Data de nascimento"]
 
   Select Options By   xpath=(//header[@class="datepicker-header"]//select)[1]
-  ...                 text              ${date}[0]
+  ...                 text               ${date}[0]
 
   Select Options By   xpath=(//header[@class="datepicker-header"]//select)[2]
   ...                 value              ${date}[1]
@@ -54,7 +54,9 @@ Submit User Form
 
 
 Toaster Message Should Be
-  [Arguments]         ${expected_message}
+  [Arguments]               ${expected_message}
 
-  Wait For Elements State   css=.toast div >> text=${expected_message}
-  ...                       visible     5
+  ${element}                Set Variable    css=.toast-div
+
+  Wait For Elements State   ${element}      visible  5
+  Get Text                  ${element}      equal    ${expected_message}
