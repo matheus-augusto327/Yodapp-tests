@@ -10,9 +10,17 @@ Test Teardown   End Session
 Deve cadastrar um novo personagem
   [Tags]        happy
 
+  &{user}       Create Dictionary
+  ...           name=Mestre Yoda
+  ...           email=yoda@jedi.com
+  ...           ordem=Jedi
+  ...           tpjedi=Cavaleiro Jedi
+  ...           bdate=fevereiro-1970-20
+  ...           instagram=@yoda
+
   Go To User Form
-  Fill User Form                Mestre Yoda  yoda@jedi.com  Jedi  fevereiro-1970-20  @yoda
-  Select Jedi                   Cavaleiro Jedi
+  Fill User Form                ${user}
+  Select Jedi                   ${user}[tpjedi]
   Check Accept Communications
   Submit User Form
   Toaster Message Should Be     Usuário cadastrado com sucesso!
@@ -21,8 +29,15 @@ Deve cadastrar um novo personagem
 Email Incorreto
   [Tags]        inv_email
 
+  &{user}       Create Dictionary
+  ...           name=Darth Vader
+  ...           email=vader&hotmail.com
+  ...           ordem=Sith
+  ...           bdate=dezembro-1980-15
+  ...           instagram=@vader
+
   Go To User Form
-  Fill User Form                Darth Vader  vader&hotmail.com  Sith  dezembro-1980-15  @vader
+  Fill User Form                ${user}
   Check Accept Communications
   Submit User Form
   Toaster Message Should Be     Oops! o email é incorreto.
