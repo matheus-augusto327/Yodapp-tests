@@ -2,9 +2,14 @@
 Documentation   Ações customizadas do Yodapp
 
 *Keywords*
+Go To Home Page
+  Go To                     ${BASE_URL}
+
+  Wait For Elements State   css=.carousel       visible  5
+
 Go To User Form
 
-  Click         text=Novo
+  Click                     text=Novo
 
   Wait For Elements State   css=.card-header-title >> text=Cadastrar novo usuário
   ...                       visible     5
@@ -56,7 +61,7 @@ Submit User Form
 Toaster Message Should Be
   [Arguments]               ${expected_message}
 
-  ${element}                Set Variable    css=.toast-div
+  ${element}                Set Variable    css=.toast div
 
   Wait For Elements State   ${element}      visible  5
   Get Text                  ${element}      equal    ${expected_message}

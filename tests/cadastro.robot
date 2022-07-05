@@ -20,6 +20,7 @@ Deve cadastrar um novo personagem
   Check Accept Communications
   Submit User Form
   Toaster Message Should Be     Usuário cadastrado com sucesso!
+  Go To Home Page
 
 
 Email Incorreto
@@ -31,4 +32,4 @@ Email Incorreto
   Fill User Form                ${user}
   Check Accept Communications
   Submit User Form
-  Toaster Message Should Be     Oops! o email é incorreto.
+  Toaster Message Should Be     Oops! O email é incorreto.
