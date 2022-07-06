@@ -63,5 +63,15 @@ Toaster Message Should Be
 
   ${element}                Set Variable    css=.toast div
 
-  Wait For Elements State   ${element}      visible  5
-  Get Text                  ${element}      equal    ${expected_message}
+  Wait For Elements State   ${element}      visible   5
+  Get Text                  ${element}      equal     ${expected_message}
+
+
+User Should Be Visible
+  [Arguments]               ${user}
+
+  ${element}                Set Variable    xpath=//td[contains(text(), "${user}[email]")]/..
+
+  Wait For Elements State   ${element}      visible   5
+  Get Text                  ${element}      contains  ${user}[name]
+  Get Text                  ${element}      contains  ${user}[instagram]
